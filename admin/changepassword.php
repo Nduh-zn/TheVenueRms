@@ -26,7 +26,7 @@ $chngpwd1 = $dbh->prepare($con);
 $chngpwd1-> bindParam(':username', $username, PDO::PARAM_STR);
 $chngpwd1-> bindParam(':newpassword', $newpassword, PDO::PARAM_STR);
 $chngpwd1->execute();
-$msg="Your Password succesfully changed";
+$msg="Your Password successfully changed";
 }
 else {
 $error="Your current password is wrong";    
@@ -61,7 +61,7 @@ $error="Your current password is wrong";
             <main class="mn-inner">
                 <div class="row">
                     <div class="col s12">
-                        <div class="page-title">Change Pasword</div>
+                        <div class="page-title">Change Password</div>
                     </div>
                     <div class="col s12 m12 l6">
                         <div class="card">
@@ -78,9 +78,9 @@ $error="Your current password is wrong";
                                             </div>
 
   <div class="input-field col s12">
- <input id="password" type="password" name="newpassword" class="validate" autocomplete="off" required>
-                                                <label for="password">New Password</label>
-                                            </div>
+     <input id="password" type="password" name="newpassword" class="validate" autocomplete="off" required>
+    <label for="password">New Password</label>
+</div>
 
 <div class="input-field col s12">
 <input id="password" type="password" name="confirmpassword" class="validate" autocomplete="off" required>
