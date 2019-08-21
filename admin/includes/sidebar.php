@@ -5,10 +5,10 @@
                             <img src="../assets/images/profile-image.png" class="circle" alt="">
                         </div>
                         <div class="sidebar-profile-info">
-                       
+
                                 <p>Admin</p>
 
-                         
+
                         </div>
                     </div>
             
@@ -36,22 +36,20 @@
                         <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">account_box</i>Employees<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="addemployee.php">Add Employee</a></li>
-                                <li><a href="manageemployee.php">Manage Employee</a></li>
+                                <li><a href="../users/addUser.php">Add Employee</a></li>
+                                <li><a href="../users/manageUser.php">Manage Employee</a></li>
        
                             </ul>
-                        </div>
                     </li>
 
    <li class="no-padding">
-                        <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">desktop_windows</i>Leave Management<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
+                        <a class="collapsible-header waves-effect waves-grey"><i class="material-icons"></i>Reservation Management<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="https://www.noidatut.com">Dr Tutorial NoidaTut </a></li>
-								<li><a href="leaves.php">All Leaves </a></li>
-                                <li><a href="pending-leavehistory.php">Pending Leaves </a></li>
-                                <li><a href="approvedleave-history.php">Approved Leaves</a></li>
-                                  <li><a href="notapproved-leaves.php">Not Approved Leaves</a></li>
+								<li><a href="../reservations.php">All Reservations</a></li>
+                                <li><a href="../pendingReservations.php">Pending Reservations </a></li>
+                                <li><a href="../approvedReservations.php">Approved Reservations</a></li>
+                                  <li><a href="../declinedReservations.php">Declined Reservations</a></li>
        
                             </ul>
                         </div>
@@ -70,7 +68,7 @@
                 </ul>
                    <div class="footer">
                     <p class="copyright">Brought To You By<a href="http://www.noidatut.com/">Dr Tutorial NoidaTut</a></p>
-                
+
                 </div>
                 </div>
             </aside>

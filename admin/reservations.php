@@ -93,22 +93,21 @@ else{
 
                                         <tr>
                                             <td> <b><?php echo htmlentities($cnt);?></b></td>
-                                              <td><a href="editemployee.php?empid=<?php echo htmlentities($result->id);?>" target="_blank"><?php echo htmlentities($result->FirstName." ".$result->LastName);?>(<?php echo htmlentities($result->username);?>)</a></td>
+                                            <td><a href="editUser.php?uid=<?php echo htmlentities($result->id);?>" target="_blank"><?php echo htmlentities($result->FirstName." ".$result->LastName);?>(<?php echo htmlentities($result->username);?>)</a></td>
                                             <td><?php echo htmlentities($result->roomType);?></td>
                                             <td><?php echo htmlentities($result->PostingDate);?></td>
-                                           <td><?php $stats=$result->Status;
-                                                        if($stats==1){
-                                             ?>
-                                                 <span style="color: green">Approved</span>
-                                                 <?php } if($stats==2)  { ?>
-                                                <span style="color: red">Not Approved</span>
-                                                 <?php } if($stats==0)  { ?>
-                                        <span style="color: blue">waiting for approval</span>
-                                        <?php } ?>
+                                            <td><?php $stats=$result->Status;
+                                                    if($stats==1){
+                                                                     ?>
+                                            <span style="color: green">Approved</span>
+                                            <?php } if($stats==2)  { ?>
+                                            <span style="color: red">Declined</span>
+                                            <?php } if($stats==0)  { ?>
+                                            <span style="color: blue">waiting for approval</span>
+                                            <?php } ?>
                                             </td>
 
-            <td>
-           <td><a href="leave-details.php?leaveid=<?php echo htmlentities($result->rid);?>" class="waves-effect waves-light btn blue m-b-xs"  > View Details</a></td>
+           <td><a href="reservationDetails.php?resid=<?php echo htmlentities($result->rid);?>" class="waves-effect waves-light btn blue m-b-xs"  > View Details</a></td>
                                     </tr>
                                          <?php $cnt++;} }?>
                                     </tbody>

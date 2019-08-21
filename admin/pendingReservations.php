@@ -16,7 +16,7 @@ else{
     <head>
         
         <!-- Title -->
-        <title>Admin | Approved Leave leaves </title>
+        <title>Admin | Approved Reservations </title>
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
         <meta charset="UTF-8">
@@ -60,7 +60,7 @@ else{
             <main class="mn-inner">
                 <div class="row">
                     <div class="col s12">
-                        <div class="page-title">Pending Leave History</div>
+                        <div class="page-title">Pending Reservations History</div>
                     </div>
                    
                     <div class="col s12 m12 l12">
@@ -72,8 +72,8 @@ else{
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th width="200">Employe Name</th>
-                                            <th width="120">Leave Type</th>
+                                            <th width="200">Name</th>
+                                            <th width="120">Reservation Type</th>
 
                                              <th width="180">Posting Date</th>                 
                                             <th>Status</th>
@@ -82,40 +82,37 @@ else{
                                     </thead>
                                  
                                     <tbody>
-<?php 
-$status=0;
-$sql = "SELECT tblleaves.id as lid,tblemployees.FirstName,tblemployees.LastName,tblemployees.EmpId,tblemployees.id,tblleaves.LeaveType,tblleaves.PostingDate,tblleaves.Status from tblleaves join tblemployees on tblleaves.empid=tblemployees.id where tblleaves.Status=:status order by lid desc";
-$query = $dbh -> prepare($sql);
-$query->bindParam(':status',$status,PDO::PARAM_STR);
-$query->execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-$cnt=1;
-if($query->rowCount() > 0)
-{
-foreach($results as $result)
-{         
-      ?>  
+                                    <?php
+                                    $status=0;
+                                    $sql = "SELECT reservation.id as rid,users.FirstName,users.LastName,users.username,users.id,reservation.roomType,reservation.PostingDate,reservation.Status from reservation join users on reservation.uid=users.id where reservation.Status=:status order by rid desc";
+                                    $query = $dbh -> prepare($sql);
+                                    $query->bindParam(':status',$status,PDO::PARAM_STR);
+                                    $query->execute();
+                                    $results=$query->fetchAll(PDO::FETCH_OBJ);
+                                    $cnt=1;
+                                    if($query->rowCount() > 0)
+                                    {
+                                    foreach($results as $result)
+                                    {
+                                          ?>
 
                                         <tr>
                                             <td> <b><?php echo htmlentities($cnt);?></b></td>
-                                              <td><a href="editemployee.php?empid=<?php echo htmlentities($result->id);?>" target="_blank"><?php echo htmlentities($result->FirstName." ".$result->LastName);?>(<?php echo htmlentities($result->EmpId);?>)</a></td>
-                                            <td><?php echo htmlentities($result->LeaveType);?></td>
+                                              <td><a href="editUser.php?uid=<?php echo htmlentities($result->id);?>" target="_blank"><?php echo htmlentities($result->FirstName." ".$result->LastName);?>(<?php echo htmlentities($result->username);?>)</a></td>
+                                            <td><?php echo htmlentities($result->roomType);?></td>
                                             <td><?php echo htmlentities($result->PostingDate);?></td>
-                                                                       <td><?php $stats=$result->Status;
-if($stats==1){
-                                             ?>
+                                            <td><?php $stats=$result->Status;
+                                                        if($stats==1){
+                                                                          ?>
                                                  <span style="color: green">Approved</span>
                                                  <?php } if($stats==2)  { ?>
-                                                <span style="color: red">Not Approved</span>
+                                                <span style="color: red">Declined</span>
                                                  <?php } if($stats==0)  { ?>
- <span style="color: blue">waiting for approval</span>
- <?php } ?>
+                                                 <span style="color: blue">waiting for approval</span>
+                                                 <?php } ?>
+                                            </td>
 
-
-                                             </td>
-
-          <td>
-           <td><a href="leave-details.php?leaveid=<?php echo htmlentities($result->lid);?>" class="waves-effect waves-light btn blue m-b-xs"  > View Details</a></td>
+           <td><a href="reservationDetails.php?resid=<?php echo htmlentities($result->rid);?>" class="waves-effect waves-light btn blue m-b-xs"> View Details</a></td>
                                     </tr>
                                          <?php $cnt++;} }?>
                                     </tbody>

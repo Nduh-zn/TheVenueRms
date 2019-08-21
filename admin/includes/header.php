@@ -57,7 +57,7 @@
                             <li class="hide-on-small-and-down"><a href="javascript:void(0)" data-activates="dropdown1" class="dropdown-button dropdown-right show-on-large"><i class="material-icons">notifications_none</i>
                         <?php
                         $isread=0;
-                        $sql = "SELECT id from tblleaves where IsRead=:isread";
+                        $sql = "SELECT id from reservation where IsRead=:isread";
                         $query = $dbh -> prepare($sql);
                         $query->bindParam(':isread',$isread,PDO::PARAM_STR);
                         $query->execute();
