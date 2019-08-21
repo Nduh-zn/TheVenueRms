@@ -1,7 +1,7 @@
 <?php
 session_start();
 error_reporting(0);
-include('includes/config.php');
+include('../includes/config.php');
 if(strlen($_SESSION['alogin'])==0)
     {   
 header('location:index.php');
@@ -10,11 +10,11 @@ else{
 if(isset($_GET['del']))
 {
 $id=$_GET['del'];
-$sql = "delete from  tblleavetype  WHERE id=:id";
+$sql = "delete from  roomtype  WHERE id=:id";
 $query = $dbh->prepare($sql);
 $query -> bindParam(':id',$id, PDO::PARAM_STR);
 $query -> execute();
-$msg="Leave type record deleted";
+$msg="Room type successfully deleted";
 
 }
  ?>
@@ -23,7 +23,7 @@ $msg="Leave type record deleted";
     <head>
         
         <!-- Title -->
-        <title>Admin | Manage Leave Type</title>
+        <title>Admin | Manage Room Type</title>
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
         <meta charset="UTF-8">
@@ -61,25 +61,20 @@ $msg="Leave type record deleted";
         </style>
     </head>
     <body>
-       <?php include('includes/header.php');?>
-            
-       <?php include('includes/sidebar.php');?>
+       <?php include('../includes/header.php');?>
+       <?php include('../includes/sidebar.php');?>
             <main class="mn-inner">
                 <div class="row">
-                    <div class="col s12">
-                        <div class="page-title">Manage Leave Type</div>
-                    </div>
-                   
                     <div class="col s12 m12 l12">
                         <div class="card">
                             <div class="card-content">
-                                <span class="card-title">Leave Type Info</span>
+                                <span class="card-title">Room Type Info</span>
                                 <?php if($msg){?><div class="succWrap"><strong>SUCCESS</strong> : <?php echo htmlentities($msg); ?> </div><?php }?>
                                 <table id="example" class="display responsive-table ">
                                     <thead>
                                         <tr>
-                                            <th>Sr no</th>
-                                            <th>Leave Type</th>
+                                            <th>no</th>
+                                            <th>Room Type</th>
                                             <th>Description</th>
                                             <th>Creation Date</th>
                                             <th>Action</th>
@@ -87,24 +82,24 @@ $msg="Leave type record deleted";
                                     </thead>
                                  
                                     <tbody>
-<?php $sql = "SELECT * from tblleavetype";
-$query = $dbh -> prepare($sql);
-$query->execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-$cnt=1;
-if($query->rowCount() > 0)
-{
-foreach($results as $result)
-{               ?>  
-                                        <tr>
-                                            <td> <?php echo htmlentities($cnt);?></td>
-                                            <td><?php echo htmlentities($result->LeaveType);?></td>
-                                            <td><?php echo htmlentities($result->Description);?></td>
-                                            <td><?php echo htmlentities($result->CreationDate);?></td>
-                                            <td><a href="editRoomType.php?lid=<?php echo htmlentities($result->id);?>"><i class="material-icons">mode_edit</i></a>
-                                            <a href="manageRoomType.php?del=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you want to delete');"> <i class="material-icons">delete_forever</i></a> </td>
-                                        </tr>
-                                         <?php $cnt++;} }?>
+                                    <?php $sql = "SELECT * from roomtype";
+                                    $query = $dbh -> prepare($sql);
+                                    $query->execute();
+                                    $results=$query->fetchAll(PDO::FETCH_OBJ);
+                                    $cnt=1;
+                                    if($query->rowCount() > 0)
+                                    {
+                                    foreach($results as $result)
+                                    {               ?>
+                                    <tr>
+                                        <td> <?php echo htmlentities($cnt);?></td>
+                                        <td><?php echo htmlentities($result->roomType);?></td>
+                                        <td><?php echo htmlentities($result->Description);?></td>
+                                        <td><?php echo htmlentities($result->CreationDate);?></td>
+                                        <td><a href="editRoomType.php?rid=<?php echo htmlentities($result->id);?>"><i class="material-icons">mode_edit</i></a>
+                                        <a href="manageRoomType.php?del=<?php echo htmlentities($result->id);?>" onclick="return confirm('Are you sure you want to delete this room type?');"> <i class="material-icons">delete_forever</i></a> </td>
+                                    </tr>
+                                     <?php $cnt++;} }?>
                                     </tbody>
                                 </table>
                             </div>
@@ -112,7 +107,6 @@ foreach($results as $result)
                     </div>
                 </div>
             </main>
-         
         </div>
         <div class="left-sidebar-hover"></div>
         

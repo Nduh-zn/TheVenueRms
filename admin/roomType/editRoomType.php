@@ -71,7 +71,7 @@ $msg="Room type updated Successfully";
             <main class="mn-inner">
                 <div class="row">
                     <div class="col s12">
-                        <div class="page-title">Edit Leave Type</div>
+                        <div class="page-title">Edit Room Type</div>
                     </div>
                     <div class="col s12 m12 l6">
                         <div class="card">
