@@ -1,37 +1,37 @@
 <?php
 session_start();
 error_reporting(0);
-include('includes/config.php');
+include('../includes/config.php');
 if(strlen($_SESSION['alogin'])==0)
     {   
 header('location:index.php');
 }
 else{
-// code for Inactive  employee    
+// code for Inactive  user
 if(isset($_GET['inid']))
 {
 $id=$_GET['inid'];
 $status=0;
-$sql = "update tblemployees set Status=:status  WHERE id=:id";
+$sql = "update users set Status=:status  WHERE id=:id";
 $query = $dbh->prepare($sql);
 $query -> bindParam(':id',$id, PDO::PARAM_STR);
 $query -> bindParam(':status',$status, PDO::PARAM_STR);
 $query -> execute();
-header('location:manageemployee.php');
+header('location:manageUser.php');
 }
 
 
-//code for active employee
+//code for active user
 if(isset($_GET['id']))
 {
 $id=$_GET['id'];
 $status=1;
-$sql = "update tblemployees set Status=:status  WHERE id=:id";
+$sql = "update users set Status=:status  WHERE id=:id";
 $query = $dbh->prepare($sql);
 $query -> bindParam(':id',$id, PDO::PARAM_STR);
 $query -> bindParam(':status',$status, PDO::PARAM_STR);
 $query -> execute();
-header('location:manageemployee.php');
+header('location:manageUser.php');
 }
  ?>
 <!DOCTYPE html>
@@ -39,7 +39,7 @@ header('location:manageemployee.php');
     <head>
         
         <!-- Title -->
-        <title>Admin | Manage Employees</title>
+        <title>Admin | Manage Users</title>
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
         <meta charset="UTF-8">
@@ -77,27 +77,24 @@ header('location:manageemployee.php');
         </style>
     </head>
     <body>
-       <?php include('includes/header.php');?>
+       <?php include('../includes/header.php');?>
             
-       <?php include('includes/sidebar.php');?>
+       <?php include('../includes/sidebar.php');?>
             <main class="mn-inner">
                 <div class="row">
-                    <div class="col s12">
-                        <div class="page-title">Manage EmployesWWW</div>
-                    </div>
                    
                     <div class="col s12 m12 l12">
                         <div class="card">
                             <div class="card-content">
-                                <span class="card-title">Employees Info</span>
+                                <span class="card-title">User Info</span>
                                 <?php if($msg){?><div class="succWrap"><strong>SUCCESS</strong> : <?php echo htmlentities($msg); ?> </div><?php }?>
                                 <table id="example" class="display responsive-table ">
                                     <thead>
                                         <tr>
-                                            <th>Sr no</th>
-                                            <th>Emp Id</th>
+                                            <th>no.</th>
+                                            <th>Username</th>
                                             <th>Full Name</th>
-                                            <th>Department</th>
+                                            <th>Role</th>
                                              <th>Status</th>
                                              <th>Reg Date</th>
                                             <th>Action</th>
@@ -105,7 +102,7 @@ header('location:manageemployee.php');
                                     </thead>
                                  
                                     <tbody>
-<?php $sql = "SELECT EmpId,FirstName,LastName,Department,Status,RegDate,id from  tblemployees";
+<?php $sql = "SELECT username,FirstName,LastName,Role,Status,RegDate,id from  users";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -116,9 +113,9 @@ foreach($results as $result)
 {               ?>  
                                         <tr>
                                             <td> <?php echo htmlentities($cnt);?></td>
-                                            <td><?php echo htmlentities($result->EmpId);?></td>
+                                            <td><?php echo htmlentities($result->username);?></td>
                                             <td><?php echo htmlentities($result->FirstName);?>&nbsp;<?php echo htmlentities($result->LastName);?></td>
-                                            <td><?php echo htmlentities($result->Department);?></td>
+                                            <td><?php echo htmlentities($result->Role);?></td>
                                              <td><?php $stats=$result->Status;
 if($stats){
                                              ?>
@@ -133,10 +130,10 @@ if($stats){
                                             <td><a href="editemployee.php?empid=<?php echo htmlentities($result->id);?>"><i class="material-icons">mode_edit</i></a>
                                         <?php if($result->Status==1)
  {?>
-<a href="manageemployee.php?inid=<?php echo htmlentities($result->id);?>" onclick="return confirm('Are you sure you want to inactive this Employe?');"" > <i class="material-icons" title="Inactive">clear</i>
+<a href="manageUser.php?inid=<?php echo htmlentities($result->id);?>" onclick="return confirm('Are you sure you want to disable this user?');"" > <i class="material-icons" title="Inactive">clear</i>
 <?php } else {?>
 
-                                            <a href="manageemployee.php?id=<?php echo htmlentities($result->id);?>" onclick="return confirm('Are you sure you want to active this employee?');""><i class="material-icons" title="Active">done</i>
+                                            <a href="manageUser.php?id=<?php echo htmlentities($result->id);?>" onclick="return confirm('Are you sure you want to activate this user?');""><i class="material-icons" title="Active">done</i>
                                             <?php } ?> </td>
                                         </tr>
                                          <?php $cnt++;} }?>

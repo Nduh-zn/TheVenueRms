@@ -25,16 +25,17 @@
       <change afterPath="$PROJECT_DIR$/../user-crud/User.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../user-crud/addUser.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../user-crud/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/approvedleave-history.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/approvedReservations.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/changepassword.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/changepassword.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/includes/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/includes/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/addleavetype.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/roomType/addRoomType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/check_availability.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/check_availability.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/editleavetype.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/roomType/editRoomType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/includes/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/sidebar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/leaves.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/reservations.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/notapproved-leaves.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/declinedReservations.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/pending-leavehistory.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/pendingReservations.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/manageleavetype.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/roomType/manageRoomType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/reservationDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/reservationDetails.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/users/addUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/users/addUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/users/editemployee.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/users/editemployee.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/users/manageUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/users/manageUser.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../school/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../school/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -99,22 +100,22 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="php" value="9" />
+          <entry key="php" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PHP" value="9" />
+          <entry key="PHP" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="1121" />
+          <entry key="php" value="2611" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="1121" />
+          <entry key="PHP" value="2611" />
         </counts>
       </usages-collector>
     </session>
@@ -122,55 +123,73 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/reservations.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="95" column="77" selection-start-line="95" selection-start-column="77" selection-end-line="95" selection-end-column="77" />
-              <folding>
-                <element signature="e#201#1856#0#HTML" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/changepassword.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
-              <caret line="63" column="59" selection-start-line="63" selection-start-column="59" selection-end-line="63" selection-end-column="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/includes/sidebar.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="52" column="81" selection-start-line="52" selection-start-column="81" selection-end-line="52" selection-end-column="81" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/declinedReservations.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6">
-              <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
-              <folding>
-                <element signature="e#201#1864#0#HTML" />
-              </folding>
+            <state relative-caret-position="217">
+              <caret line="29" column="61" lean-forward="true" selection-start-line="29" selection-start-column="61" selection-end-line="29" selection-end-column="61" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/admin/approvedReservations.php">
+        <entry file="file://$PROJECT_DIR$/admin/roomType/addRoomType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="105" column="59" selection-start-line="105" selection-start-column="59" selection-end-line="105" selection-end-column="59" />
+            <state relative-caret-position="221">
+              <caret line="13" column="57" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="57" />
               <folding>
-                <element signature="e#201#1860#0#HTML" />
-                <element signature="e#1394#1848#0#HTML" />
+                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/roomType/editRoomType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1157">
+              <caret line="130" selection-start-line="130" selection-end-line="130" />
+              <folding>
+                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/users/manageUser.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="93" column="51" selection-start-line="93" selection-start-column="51" selection-end-line="93" selection-end-column="51" />
+              <folding>
+                <element signature="e#890#2459#0#HTML" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/users/addUser.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="137">
+              <caret line="218" column="40" selection-start-line="218" selection-start-column="40" selection-end-line="218" selection-end-column="40" />
+              <folding>
+                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#span#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/check_availability.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" column="31" lean-forward="true" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -181,14 +200,31 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>check_av</find>
-      <find>empcode</find>
       <find>empid-availability</find>
       <find>valid</find>
       <find>leaveid</find>
+      <find>lid</find>
+      <find>$empid</find>
+      <find>tblemployees</find>
+      <find>empid</find>
+      <find>empcode</find>
+      <find>addemp</find>
+      <find>leavetype</find>
     </findStrings>
+    <replaceStrings>
+      <replace>usercode</replace>
+      <replace>username</replace>
+      <replace>addUser</replace>
+      <replace>ucode</replace>
+      <replace>uid</replace>
+      <replace>$roomtype</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -202,14 +238,20 @@
         <option value="$PROJECT_DIR$/admin/leave-details.php" />
         <option value="$PROJECT_DIR$/includes/config.php" />
         <option value="$PROJECT_DIR$/admin/changepassword.php" />
-        <option value="$PROJECT_DIR$/admin/includes/config.php" />
         <option value="$PROJECT_DIR$/admin/includes/header.php" />
         <option value="$PROJECT_DIR$/admin/leaves.php" />
+        <option value="$PROJECT_DIR$/admin/includes/config.php" />
         <option value="$PROJECT_DIR$/admin/reservations.php" />
-        <option value="$PROJECT_DIR$/admin/pendingReservations.php" />
-        <option value="$PROJECT_DIR$/admin/includes/sidebar.php" />
-        <option value="$PROJECT_DIR$/admin/declinedReservations.php" />
         <option value="$PROJECT_DIR$/admin/approvedReservations.php" />
+        <option value="$PROJECT_DIR$/admin/pendingReservations.php" />
+        <option value="$PROJECT_DIR$/admin/declinedReservations.php" />
+        <option value="$PROJECT_DIR$/admin/reservationDetails.php" />
+        <option value="$PROJECT_DIR$/admin/check_availability.php" />
+        <option value="$PROJECT_DIR$/admin/users/addUser.php" />
+        <option value="$PROJECT_DIR$/admin/users/manageUser.php" />
+        <option value="$PROJECT_DIR$/admin/includes/sidebar.php" />
+        <option value="$PROJECT_DIR$/admin/roomType/editRoomType.php" />
+        <option value="$PROJECT_DIR$/admin/roomType/addRoomType.php" />
       </list>
     </option>
   </component>
@@ -253,6 +295,18 @@
               <item name="admin" type="462c0819:PsiDirectoryNode" />
               <item name="includes" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="TheVenueRms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TheVenueRms" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="roomType" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TheVenueRms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TheVenueRms" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="users" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -264,6 +318,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Projects\TheVenueRms\admin\roomType" />
+      <recent name="C:\xampp\htdocs\Projects\TheVenueRms\admin\users" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -290,12 +350,12 @@
       <workItem from="1563922373360" duration="4604000" />
       <workItem from="1564080075200" duration="47889000" />
       <workItem from="1565867068825" duration="4109000" />
-      <workItem from="1566331316416" duration="6655000" />
+      <workItem from="1566331316416" duration="32555000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63257000" />
+    <option name="totallyTimeSpent" value="89157000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -303,9 +363,10 @@
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.18154311" />
+      <window_info content_ui="combo" id="Project" order="2" weight="0.18154311" />
+      <window_info anchor="bottom" id="Command Line Tools Console" weight="0.3295082" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -324,9 +385,9 @@
     <layout-to-restore>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.18229954" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.18154311" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -357,19 +418,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/addleavetype.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/editleavetype.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/addemployee.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2550">
-          <caret line="150" selection-start-line="150" selection-end-line="150" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apply-leave.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2907">
@@ -377,14 +425,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/check_availability.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/editemployee.php">
+    <entry file="file://$PROJECT_DIR$/admin/users/editemployee.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
           <caret line="110" selection-start-line="110" selection-end-line="110" />
@@ -398,20 +439,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/manageemployee.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/leavehistory.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1700">
           <caret line="100" column="18" selection-start-line="100" selection-start-column="18" selection-end-line="100" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/leave-details.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="84" column="10" selection-start-line="84" selection-start-column="10" selection-end-line="86" />
         </state>
       </provider>
     </entry>
@@ -425,17 +456,59 @@
     <entry file="file://$PROJECT_DIR$/includes/header.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/includes/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/changepassword.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="489">
           <caret line="63" column="59" selection-start-line="63" selection-start-column="59" selection-end-line="63" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/approvedReservations.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="108" column="92" lean-forward="true" selection-start-line="108" selection-start-column="92" selection-end-line="108" selection-end-column="92" />
+          <folding>
+            <element signature="e#201#1860#0#HTML" />
+            <element signature="e#1394#1848#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/reservations.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="109" column="94" lean-forward="true" selection-start-line="109" selection-start-column="15" selection-end-line="109" selection-end-column="94" />
+          <folding>
+            <element signature="e#201#1856#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/pendingReservations.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="114" column="94" selection-start-line="114" selection-start-column="94" selection-end-line="114" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/declinedReservations.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1041">
+          <caret line="110" column="94" selection-start-line="110" selection-start-column="94" selection-end-line="110" selection-end-column="94" />
+          <folding>
+            <element signature="e#201#1864#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/reservationDetails.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="145" column="89" selection-start-line="145" selection-start-column="89" selection-end-line="145" selection-end-column="89" />
+          <folding>
+            <element signature="e#2614#3252#0#HTML" />
+            <element signature="e#5659#5682#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -446,50 +519,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/reservations.php">
+    <entry file="file://$PROJECT_DIR$/admin/includes/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="95" column="77" selection-start-line="95" selection-start-column="77" selection-end-line="95" selection-end-column="77" />
+        <state relative-caret-position="85">
+          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/check_availability.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="31" lean-forward="true" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
           <folding>
-            <element signature="e#201#1856#0#HTML" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/pendingReservations.php">
+    <entry file="file://$PROJECT_DIR$/admin/users/addUser.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="114" column="140" lean-forward="true" selection-start-line="114" selection-start-column="140" selection-end-line="114" selection-end-column="140" />
+        <state relative-caret-position="137">
+          <caret line="218" column="40" selection-start-line="218" selection-start-column="40" selection-end-line="218" selection-end-column="40" />
           <folding>
-            <element signature="e#201#1866#0#HTML" />
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#span#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/users/manageUser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="93" column="51" selection-start-line="93" selection-start-column="51" selection-end-line="93" selection-end-column="51" />
+          <folding>
+            <element signature="e#890#2459#0#HTML" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/includes/sidebar.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="52" column="81" selection-start-line="52" selection-start-column="81" selection-end-line="52" selection-end-column="81" />
+        <state relative-caret-position="217">
+          <caret line="29" column="61" lean-forward="true" selection-start-line="29" selection-start-column="61" selection-end-line="29" selection-end-column="61" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/declinedReservations.php">
+    <entry file="file://$PROJECT_DIR$/admin/roomType/editRoomType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6">
-          <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+        <state relative-caret-position="1157">
+          <caret line="130" selection-start-line="130" selection-end-line="130" />
           <folding>
-            <element signature="e#201#1864#0#HTML" />
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/approvedReservations.php">
+    <entry file="file://$PROJECT_DIR$/admin/roomType/addRoomType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="105" column="59" selection-start-line="105" selection-start-column="59" selection-end-line="105" selection-end-column="59" />
+        <state relative-caret-position="221">
+          <caret line="13" column="57" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="57" />
           <folding>
-            <element signature="e#201#1860#0#HTML" />
-            <element signature="e#1394#1848#0#HTML" />
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>

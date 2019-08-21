@@ -24,20 +24,20 @@
                         </div>
                     </li>
                     <li class="no-padding">
-                        <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">code</i>Leave Type<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
+                        <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">code</i>Room Type<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="addleavetype.php">Add Leave Type</a></li>
-                                <li><a href="manageleavetype.php">Manage Leave Type</a></li>
+                                <li><a href="../roomType/addRoomType.php">Add Room Type</a></li>
+                                <li><a href="../roomType/manageRoomType.php">Manage Room Types</a></li>
                             </ul>
                         </div>
                     </li>
                     <li class="no-padding">
-                        <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">account_box</i>Employees<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
+                        <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">account_box</i>Users<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="../users/addUser.php">Add Employee</a></li>
-                                <li><a href="../users/manageUser.php">Manage Employee</a></li>
+                                <li><a href="../users/addUser.php">Add User</a></li>
+                                <li><a href="../users/manageUser.php">Manage User</a></li>
        
                             </ul>
                     </li>

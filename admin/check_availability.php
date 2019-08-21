@@ -1,12 +1,12 @@
 <?php 
 require_once("includes/config.php");
-// code for empid availablity
-if(!empty($_POST["empcode"])) {
-	$empid=$_POST["empcode"];
+// code for uid availablity
+if(!empty($_POST["ucode"])) {
+	$uid=$_POST["ucode"];
 	
-$sql ="SELECT EmpId FROM tblemployees WHERE EmpId=:empid";
+$sql ="SELECT username FROM users WHERE username=:uid";
 $query= $dbh->prepare($sql);
-$query-> bindParam(':empid',$empid, PDO::PARAM_STR);
+$query-> bindParam(':uid',$uid, PDO::PARAM_STR);
 $query-> execute();
 $results = $query -> fetchAll(PDO::FETCH_OBJ);
 if($query->rowCount() > 0)

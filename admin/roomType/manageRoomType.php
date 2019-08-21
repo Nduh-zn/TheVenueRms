@@ -32,15 +32,15 @@ $msg="Leave type record deleted";
         <meta name="author" content="Steelcoders" />
         
         <!-- Styles -->
-        <link type="text/css" rel="stylesheet" href="../assets/plugins/materialize/css/materialize.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../assets/plugins/materialize/css/materialize.min.css"/>
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="../assets/plugins/material-preloader/css/materialPreloader.min.css" rel="stylesheet">
-        <link href="../assets/plugins/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+        <link href="../../assets/plugins/material-preloader/css/materialPreloader.min.css" rel="stylesheet">
+        <link href="../../assets/plugins/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
 
             
         <!-- Theme Styles -->
-        <link href="../assets/css/alpha.min.css" rel="stylesheet" type="text/css"/>
-        <link href="../assets/css/custom.css" rel="stylesheet" type="text/css"/>
+        <link href="../../assets/css/alpha.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css"/>
 <style>
         .errorWrap {
     padding: 10px;
@@ -101,8 +101,8 @@ foreach($results as $result)
                                             <td><?php echo htmlentities($result->LeaveType);?></td>
                                             <td><?php echo htmlentities($result->Description);?></td>
                                             <td><?php echo htmlentities($result->CreationDate);?></td>
-                                            <td><a href="editleavetype.php?lid=<?php echo htmlentities($result->id);?>"><i class="material-icons">mode_edit</i></a>
-                                            <a href="manageleavetype.php?del=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you want to delete');"> <i class="material-icons">delete_forever</i></a> </td>
+                                            <td><a href="editRoomType.php?lid=<?php echo htmlentities($result->id);?>"><i class="material-icons">mode_edit</i></a>
+                                            <a href="manageRoomType.php?del=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you want to delete');"> <i class="material-icons">delete_forever</i></a> </td>
                                         </tr>
                                          <?php $cnt++;} }?>
                                     </tbody>
@@ -117,13 +117,13 @@ foreach($results as $result)
         <div class="left-sidebar-hover"></div>
         
         <!-- Javascripts -->
-        <script src="../assets/plugins/jquery/jquery-2.2.0.min.js"></script>
-        <script src="../assets/plugins/materialize/js/materialize.min.js"></script>
-        <script src="../assets/plugins/material-preloader/js/materialPreloader.min.js"></script>
-        <script src="../assets/plugins/jquery-blockui/jquery.blockui.js"></script>
-        <script src="../assets/plugins/datatables/js/jquery.dataTables.min.js"></script>
-        <script src="../assets/js/alpha.min.js"></script>
-        <script src="../assets/js/pages/table-data.js"></script>
+        <script src="../../assets/plugins/jquery/jquery-2.2.0.min.js"></script>
+        <script src="../../assets/plugins/materialize/js/materialize.min.js"></script>
+        <script src="../../assets/plugins/material-preloader/js/materialPreloader.min.js"></script>
+        <script src="../../assets/plugins/jquery-blockui/jquery.blockui.js"></script>
+        <script src="../../assets/plugins/datatables/js/jquery.dataTables.min.js"></script>
+        <script src="../../assets/js/alpha.min.js"></script>
+        <script src="../../assets/js/pages/table-data.js"></script>
         
     </body>
 </html>
