@@ -110,7 +110,7 @@ else{
 
                                     <tr>
                                         <td style="font-size:16px;"> <b>Name :</b></td>
-                                        <td><a href="users/editemployee.php?empid=<?php echo htmlentities($result->id);?>" target="_blank">
+                                        <td><a href="editUser.php?empid=<?php echo htmlentities($result->id);?>" target="_blank">
                                                 <?php echo htmlentities($result->FirstName." ".$result->LastName);?></a></td>
                                         <td style="font-size:16px;"><b>Username :</b></td>
                                         <td><?php echo htmlentities($result->username);?></td>

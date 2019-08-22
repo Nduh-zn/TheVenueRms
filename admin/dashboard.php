@@ -46,17 +46,17 @@ else{
                         <div class="card stats-card">
                             <div class="card-content">
                             
-                                <span class="card-title">Totle Regd Employee</span>
+                                <span class="card-title">Registered Users</span>
                                 <span class="stats-counter">
 <?php
-$sql = "SELECT id from tblemployees";
+$sql = "SELECT id from users";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
-$empcount=$query->rowCount();
+$ucount=$query->rowCount();
 ?>
 
-                                    <span class="counter"><?php echo htmlentities($empcount);?></span></span>
+                                    <span class="counter"><?php echo htmlentities($ucount);?></span></span>
                             </div>
                             <div id="sparkline-bar"></div>
                         </div>
@@ -65,15 +65,15 @@ $empcount=$query->rowCount();
                         <div class="card stats-card">
                             <div class="card-content">
                             
-                                <span class="card-title">Listed Departments </span>
+                                <span class="card-title">Listed Roles </span>
     <?php
-$sql = "SELECT id from tbldepartments";
+$sql = "SELECT id from roles";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
-$dptcount=$query->rowCount();
+$rolcount=$query->rowCount();
 ?>                            
-                                <span class="stats-counter"><span class="counter"><?php echo htmlentities($dptcount);?></span></span>
+                                <span class="stats-counter"><span class="counter"><?php echo htmlentities($rolcount);?></span></span>
                             </div>
                             <div id="sparkline-line"></div>
                         </div>
@@ -81,15 +81,15 @@ $dptcount=$query->rowCount();
                     <div class="col s12 m12 l4">
                         <div class="card stats-card">
                             <div class="card-content">
-                                <span class="card-title">Listed leave Type</span>
+                                <span class="card-title">Listed Room Type</span>
                                     <?php
-$sql = "SELECT id from  tblleavetype";
+$sql = "SELECT id from  roomtype";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
-$leavtypcount=$query->rowCount();
+$rmtypcount=$query->rowCount();
 ?>   
-                                <span class="stats-counter"><span class="counter"><?php echo htmlentities($leavtypcount);?></span></span>
+                                <span class="stats-counter"><span class="counter"><?php echo htmlentities($rmtypcount);?></span></span>
                       
                             </div>
                             <div class="progress stats-card-progress">
@@ -104,13 +104,13 @@ $leavtypcount=$query->rowCount();
                             <div class="card invoices-card">
                                 <div class="card-content">
                                  
-                                    <span class="card-title">Latest Leave Applications</span>
+                                    <span class="card-title">Latest Reservations </span>
                              <table id="example" class="display responsive-table ">
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th width="200">Employe Name</th>
-                                            <th width="120">Leave Type</th>
+                                            <th width="200">Name</th>
+                                            <th width="120">Room Type</th>
 
                                              <th width="180">Posting Date</th>                 
                                             <th>Status</th>
@@ -119,7 +119,7 @@ $leavtypcount=$query->rowCount();
                                     </thead>
                                  
                                     <tbody>
-<?php $sql = "SELECT tblleaves.id as lid,tblemployees.FirstName,tblemployees.LastName,tblemployees.EmpId,tblemployees.id,tblleaves.LeaveType,tblleaves.PostingDate,tblleaves.Status from tblleaves join tblemployees on tblleaves.empid=tblemployees.id order by lid desc limit 6";
+<?php $sql = "SELECT reservation.id as rid,users.FirstName,users.LastName,users.username,users.id,reservation.RoomType,reservation.PostingDate,reservation.Status from reservation join users on reservation.uid=users.id order by rid desc limit 6";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -132,15 +132,15 @@ foreach($results as $result)
 
                                         <tr>
                                             <td> <b><?php echo htmlentities($cnt);?></b></td>
-                                              <td><a href="users/editemployee.php?empid=<?php echo htmlentities($result->id);?>" target="_blank"><?php echo htmlentities($result->FirstName." ".$result->LastName);?>(<?php echo htmlentities($result->EmpId);?>)</a></td>
-                                            <td><?php echo htmlentities($result->LeaveType);?></td>
+                                              <td><a href="editUser.php?empid=<?php echo htmlentities($result->id);?>" target="_blank"><?php echo htmlentities($result->FirstName." ".$result->LastName);?>(<?php echo htmlentities($result->username);?>)</a></td>
+                                            <td><?php echo htmlentities($result->RoomType);?></td>
                                             <td><?php echo htmlentities($result->PostingDate);?></td>
                                                                        <td><?php $stats=$result->Status;
 if($stats==1){
                                              ?>
                                                  <span style="color: green">Approved</span>
                                                  <?php } if($stats==2)  { ?>
-                                                <span style="color: red">Not Approved</span>
+                                                <span style="color: red">Declined</span>
                                                  <?php } if($stats==0)  { ?>
  <span style="color: blue">waiting for approval</span>
  <?php } ?>
@@ -149,7 +149,7 @@ if($stats==1){
                                              </td>
 
           <td>
-           <td><a href="reservationDetails.php?leaveid=<?php echo htmlentities($result->lid);?>" class="waves-effect waves-light btn blue m-b-xs"  > View Details</a></td>
+           <td><a href="reservationDetails.php?resid=<?php echo htmlentities($result->rid);?>" class="waves-effect waves-light btn blue m-b-xs"  > View Details</a></td>
                                     </tr>
                                          <?php $cnt++;} }?>
                                     </tbody>

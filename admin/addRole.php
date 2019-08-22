@@ -1,7 +1,7 @@
 <?php
 session_start();
 error_reporting(0);
-include('includes/config.php');
+include('../includes/config.php');
 if(strlen($_SESSION['alogin'])==0)
     {   
 header('location:index.php');
@@ -9,19 +9,18 @@ header('location:index.php');
 else{
 if(isset($_POST['add']))
 {
-$deptname=$_POST['departmentname'];
-$deptshortname=$_POST['departmentshortname'];
-$deptcode=$_POST['deptcode'];   
-$sql="INSERT INTO tbldepartments(DepartmentName,DepartmentCode,DepartmentShortName) VALUES(:deptname,:deptcode,:deptshortname)";
+$role=$_POST['role'];
+$roleShortName=$_POST['roleShortName'];
+
+$sql="INSERT INTO roles(RoleName,RoleShortName) VALUES(:role,:roleShortName)";
 $query = $dbh->prepare($sql);
-$query->bindParam(':deptname',$deptname,PDO::PARAM_STR);
-$query->bindParam(':deptcode',$deptcode,PDO::PARAM_STR);
-$query->bindParam(':deptshortname',$deptshortname,PDO::PARAM_STR);
+$query->bindParam(':role',$role,PDO::PARAM_STR);
+$query->bindParam(':roleShortName',$roleShortName,PDO::PARAM_STR);
 $query->execute();
 $lastInsertId = $dbh->lastInsertId();
 if($lastInsertId)
 {
-$msg="Department Created Successfully";
+$msg="Role Created Successfully";
 }
 else 
 {
@@ -37,7 +36,7 @@ $error="Something went wrong. Please try again";
     <head>
         
         <!-- Title -->
-        <title>Admin | Add Department</title>
+        <title>Admin | Add Role</title>
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
         <meta charset="UTF-8">
@@ -48,7 +47,7 @@ $error="Something went wrong. Please try again";
         <!-- Styles -->
         <link type="text/css" rel="stylesheet" href="../assets/plugins/materialize/css/materialize.min.css"/>
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="../assets/plugins/material-preloader/css/materialPreloader.min.css" rel="stylesheet"> 
+        <link href="../assets/plugins/material-preloader/css/materialPreloader.min.css" rel="stylesheet">
         <link href="../assets/css/alpha.min.css" rel="stylesheet" type="text/css"/>
         <link href="../assets/css/custom.css" rel="stylesheet" type="text/css"/>
   <style>
@@ -77,7 +76,7 @@ $error="Something went wrong. Please try again";
             <main class="mn-inner">
                 <div class="row">
                     <div class="col s12">
-                        <div class="page-title">Add Department</div>
+                        <div class="page-title">Add Role</div>
                     </div>
                     <div class="col s12 m12 l6">
                         <div class="card">
@@ -86,30 +85,26 @@ $error="Something went wrong. Please try again";
                                 <div class="row">
                                     <form class="col s12" name="chngpwd" method="post">
                                           <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
-                else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
+                                         else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
                                         <div class="row">
                                             <div class="input-field col s12">
-<input id="departmentname" type="text"  class="validate" autocomplete="off" name="departmentname"  required>
-                                                <label for="deptname">Department Name</label>
+                                                <input id="role" type="text"  class="validate" autocomplete="off" name="role"  required>
+                                                <label for="role">Role Name</label>
                                             </div>
 
 
-          <div class="input-field col s12">
-<input id="departmentshortname" type="text"  class="validate" autocomplete="off" name="departmentshortname"  required>
-                                                <label for="deptshortname">Department Short Name</label>
-                                            </div>
-  <div class="input-field col s12">
- <input id="deptcode" type="text" name="deptcode" class="validate" autocomplete="off" required>
-                                                <label for="password">Department Code</label>
+                                          <div class="input-field col s12">
+                                                <input id="roleshortname" type="text"  class="validate" autocomplete="off" name="roleshortname"  required>
+                                                <label for="roleshortname">Role code</label>
                                             </div>
 
 
 
 
-<div class="input-field col s12">
-<button type="submit" name="add" class="waves-effect waves-light btn indigo m-b-xs">ADD</button>
+                                    <div class="input-field col s12">
+                                    <button type="submit" name="add" class="waves-effect waves-light btn indigo m-b-xs">ADD</button>
 
-</div>
+                                    </div>
 
 
 

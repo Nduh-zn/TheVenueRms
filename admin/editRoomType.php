@@ -3,8 +3,8 @@ session_start();
 error_reporting(0);
 include('../includes/config.php');
 if(strlen($_SESSION['alogin'])==0)
-    {   
-header('location:index.php');
+{
+    header('location:index.php');
 }
 else{
 if(isset($_POST['update']))
@@ -16,7 +16,7 @@ $sql="update roomtype set roomType=:roomtype,Description=:description where id=:
 $query = $dbh->prepare($sql);
 $query->bindParam(':roomtype',$roomtype,PDO::PARAM_STR);
 $query->bindParam(':description',$description,PDO::PARAM_STR);
-$query->bindParam(':lid',$lid,PDO::PARAM_STR);
+$query->bindParam(':rid',$rid,PDO::PARAM_STR);
 $query->execute();
 
 $msg="Room type updated Successfully";
@@ -29,22 +29,22 @@ $msg="Room type updated Successfully";
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        
+
         <!-- Title -->
         <title>Admin | Edit Room Type</title>
-        
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
         <meta charset="UTF-8">
         <meta name="description" content="Responsive Admin Dashboard Template" />
         <meta name="keywords" content="admin,dashboard" />
         <meta name="author" content="Steelcoders" />
-        
+
         <!-- Styles -->
-        <link type="text/css" rel="stylesheet" href="../../assets/plugins/materialize/css/materialize.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../assets/plugins/materialize/css/materialize.min.css"/>
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="../../assets/plugins/material-preloader/css/materialPreloader.min.css" rel="stylesheet">
-        <link href="../../assets/css/alpha.min.css" rel="stylesheet" type="text/css"/>
-        <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css"/>
+        <link href="../assets/plugins/material-preloader/css/materialPreloader.min.css" rel="stylesheet">
+        <link href="../assets/css/alpha.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../assets/css/custom.css" rel="stylesheet" type="text/css"/>
   <style>
         .errorWrap {
     padding: 10px;
@@ -65,9 +65,9 @@ $msg="Room type updated Successfully";
         </style>
     </head>
     <body>
-  <?php include('../includes/header.php');?>
-            
-       <?php include('../includes/sidebar.php');?>
+  <?php include('includes/header.php');?>
+
+       <?php include('includes/sidebar.php');?>
             <main class="mn-inner">
                 <div class="row">
                     <div class="col s12">
@@ -76,16 +76,16 @@ $msg="Room type updated Successfully";
                     <div class="col s12 m12 l6">
                         <div class="card">
                             <div class="card-content">
-                              
+
                                 <div class="row">
                                     <form class="col s12" name="chngpwd" method="post">
-                                          <?php if($error){?><div class="errorWrap"><strong>ERROR</strong> : <?php echo htmlentities($error); ?> </div><?php } 
+                                          <?php if($error){?><div class="errorWrap"><strong>ERROR</strong> : <?php echo htmlentities($error); ?> </div><?php }
                                             else if($msg){?><div class="succWrap"><strong>SUCCESS</strong> : <?php echo htmlentities($msg); ?> </div><?php }?>
                                             <?php
                                             $rid=intval($_GET['rid']);
                                             $sql = "SELECT * from roomtype where id=:rid";
                                             $query = $dbh -> prepare($sql);
-                                            $query->bindParam(':rid',$lid,PDO::PARAM_STR);
+                                            $query->bindParam(':rid',$rid,PDO::PARAM_STR);
                                             $query->execute();
                                             $results=$query->fetchAll(PDO::FETCH_OBJ);
                                             $cnt=1;
@@ -96,8 +96,8 @@ $msg="Room type updated Successfully";
 
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="$roomtype" type="text"  class="validate" autocomplete="off" name="$roomtype" value="<?php echo htmlentities($result->roomType);?>"  required>
-                                <label for="$roomtype">Room Type</label>
+                                <input id="roomtype" type="text"  class="validate" autocomplete="off" name="roomtype" value="<?php echo htmlentities($result->roomType);?>"  required>
+                                <label for="roomtype">Room Type</label>
                             </div>
 
                         <div class="input-field col s12">
@@ -119,15 +119,15 @@ $msg="Room type updated Successfully";
     </main>
 </div>
 <div class="left-sidebar-hover"></div>
-        
+
         <!-- Javascripts -->
-        <script src="../../assets/plugins/jquery/jquery-2.2.0.min.js"></script>
-        <script src="../../assets/plugins/materialize/js/materialize.min.js"></script>
-        <script src="../../assets/plugins/material-preloader/js/materialPreloader.min.js"></script>
-        <script src="../../assets/plugins/jquery-blockui/jquery.blockui.js"></script>
-        <script src="../../assets/js/alpha.min.js"></script>
-        <script src="../../assets/js/pages/form_elements.js"></script>
-        
+        <script src="../assets/plugins/jquery/jquery-2.2.0.min.js"></script>
+        <script src="../assets/plugins/materialize/js/materialize.min.js"></script>
+        <script src="../assets/plugins/material-preloader/js/materialPreloader.min.js"></script>
+        <script src="../assets/plugins/jquery-blockui/jquery.blockui.js"></script>
+        <script src="../assets/js/alpha.min.js"></script>
+        <script src="../assets/js/pages/form_elements.js"></script>
+
 </body>
 </html>
 <?php } ?> 

@@ -106,7 +106,7 @@ else{
                                                  <?php } ?>
                                              </td>
 
-           <td><a href="reservationDetails.php?rid=<?php echo htmlentities($result->rid);?>" class="waves-effect waves-light btn blue m-b-xs"  > View Details</a></td>
+           <td><a href="reservationDetails.php?resid=<?php echo htmlentities($result->rid);?>"" class="waves-effect waves-light btn blue m-b-xs"  > View Details</a></td>
                                     </tr>
                                          <?php $cnt++;} }?>
                                     </tbody>
