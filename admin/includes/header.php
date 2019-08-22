@@ -49,12 +49,12 @@
                             </a>
                         </section>
                         <div class="header-title col s3">      
-                            <span class="chapter-title">ELMS | Admin <a href="https://www.noidatut.com"> | Dr. Tutorial NoidaTut</span>
+                            <span class="chapter-title"> Admin  | THE VENUE</span>
                         </div>
                       
                         <ul class="right col s9 m3 nav-right-menu">
                         
-                            <li class="hide-on-small-and-down"><a href="javascript:void(0)" data-activates="dropdown1" class="dropdown-button dropdown-right show-on-large"><i class="material-icons">notifications_none</i>
+                            <li class="hide-on-small-and-down"><a href="javascript:void(0)" data-activates="dropdown1" class="dropdown-button dropdown-right show-on-large"><i class="material-icons">notifications</i>
                         <?php
                         $isread=0;
                         $sql = "SELECT id from reservation where IsRead=:isread";
@@ -75,7 +75,7 @@
                                     <li class="notification-drop-title">Notifications</li>
                         <?php
                         $isread=0;
-                        $sql = "SELECT tblleaves.id as lid,tblemployees.FirstName,tblemployees.LastName,tblemployees.EmpId,tblleaves.PostingDate from tblleaves join tblemployees on tblleaves.empid=tblemployees.id where tblleaves.IsRead=:isread";
+                        $sql = "SELECT reservation.id as rid,users.FirstName,users.LastName,users.username,reservation.PostingDate from reservation join users on reservation.uid=users.id where reservation.IsRead=:isread";
                         $query = $dbh -> prepare($sql);
                         $query->bindParam(':isread',$isread,PDO::PARAM_STR);
                         $query->execute();
@@ -87,10 +87,10 @@
 
 
                         <li>
-                            <a href="leave-details.php?leaveid=<?php echo htmlentities($result->lid);?>">
+                            <a href="reservationDetails.php?resid=<?php echo htmlentities($result->rid);?>">
                             <div class="notification">
                                 <div class="notification-icon circle cyan"><i class="material-icons">done</i></div>
-                                <div class="notification-text"><p><b><?php echo htmlentities($result->FirstName." ".$result->LastName);?><br />(<?php echo htmlentities($result->EmpId);?>)</b> applied for leave</p><span>at <?php echo htmlentities($result->PostingDate);?></b></span></div>
+                                <div class="notification-text"><p><b><?php echo htmlentities($result->FirstName." ".$result->LastName);?><br />(<?php echo htmlentities($result->username);?>)</b> applied for Reservation</p><span>at <?php echo htmlentities($result->PostingDate);?></b></span></div>
                             </div>
                             </a>
                         </li>

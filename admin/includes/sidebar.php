@@ -74,7 +74,7 @@
               
                 </ul>
                    <div class="footer">
-                    <p class="copyright">Brought To You By<a href="http://www.noidatut.com/">Dr Tutorial NoidaTut</a></p>
+                    <p class="copyright">Brought To You By <a href="http://www.noidatut.com/">Ndu</a></p>
 
                 </div>
                 </div>

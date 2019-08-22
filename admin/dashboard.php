@@ -53,10 +53,10 @@ $sql = "SELECT id from users";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
-$ucount=$query->rowCount();
+$userCount=$query->rowCount();
 ?>
 
-                                    <span class="counter"><?php echo htmlentities($ucount);?></span></span>
+                                    <span class="counter"><?php echo htmlentities($userCount);?></span></span>
                             </div>
                             <div id="sparkline-bar"></div>
                         </div>
@@ -65,15 +65,15 @@ $ucount=$query->rowCount();
                         <div class="card stats-card">
                             <div class="card-content">
                             
-                                <span class="card-title">Listed Roles </span>
+                                <span class="card-title">Total Rooms </span>
     <?php
-$sql = "SELECT id from roles";
+$sql = "SELECT id from room";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
-$rolcount=$query->rowCount();
+$roomCount=$query->rowCount();
 ?>                            
-                                <span class="stats-counter"><span class="counter"><?php echo htmlentities($rolcount);?></span></span>
+                                <span class="stats-counter"><span class="counter"><?php echo htmlentities($roomCount);?></span></span>
                             </div>
                             <div id="sparkline-line"></div>
                         </div>
@@ -81,15 +81,15 @@ $rolcount=$query->rowCount();
                     <div class="col s12 m12 l4">
                         <div class="card stats-card">
                             <div class="card-content">
-                                <span class="card-title">Listed Room Type</span>
+                                <span class="card-title">Total Room Types</span>
                                     <?php
 $sql = "SELECT id from  roomtype";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
-$rmtypcount=$query->rowCount();
+$rmtypCount=$query->rowCount();
 ?>   
-                                <span class="stats-counter"><span class="counter"><?php echo htmlentities($rmtypcount);?></span></span>
+                                <span class="stats-counter"><span class="counter"><?php echo htmlentities($rmtypCount);?></span></span>
                       
                             </div>
                             <div class="progress stats-card-progress">

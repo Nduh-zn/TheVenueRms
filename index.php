@@ -1,13 +1,64 @@
 
 <?php
 session_start();
-error_reporting(0);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 include('includes/config.php');
+
+
+
+
+
 if(isset($_POST['signin']))
+{
+    $uname=$_POST['username'];
+    $password=md5($_POST['password']);
+
+    $sql ="SELECT * FROM users WHERE username=:uname and Password=:password";
+    $query= $dbh -> prepare($sql);
+    $query-> bindParam(':uname', $uname, PDO::PARAM_STR);
+    $query-> bindParam(':password', $password, PDO::PARAM_STR);
+    $query-> execute();
+    $results=$query->fetchAll(PDO::FETCH_OBJ);
+    if($query->rowCount() > 0)
+    {
+        foreach ($results as $result) {
+            $status=$result->Status;
+            $role = $result->Role;
+            $_SESSION['uid']=$result->id;
+        }
+        if($status==0)
+        {
+            $msg="Your account is Inactive. Please contact admin";
+        }
+        if($role=='Guest'){
+            $_SESSION['gtlogin']=$_POST['username'];
+            echo "<script type='text/javascript'> document.location = 'emp-changepassword.php'; </script>";
+        }
+        if($role=='Staff'){
+            $_SESSION['stlogin']=$_POST['username'];
+            echo "<script type='text/javascript'> document.location = 'staff/dashboard.php'; </script>";
+        }
+        if($role=='Admin'){
+            $_SESSION['alogin']=$_POST['username'];
+            echo "<script type='text/javascript'> document.location = 'admin/changepassword.php'; </script>";
+        }
+    }
+
+    else{
+
+        echo "<script>alert('Invalid Details');</script>";
+
+    }
+
+
+/*if(isset($_POST['signin']))
 {
 $uname=$_POST['username'];
 $password=md5($_POST['password']);
-$sql ="SELECT EmailId,Password,Status,id FROM tblemployees WHERE EmailId=:uname and Password=:password";
+
+$sql ="SELECT * FROM users WHERE username=:uname and Password=:password";
 $query= $dbh -> prepare($sql);
 $query-> bindParam(':uname', $uname, PDO::PARAM_STR);
 $query-> bindParam(':password', $password, PDO::PARAM_STR);
@@ -17,12 +68,14 @@ if($query->rowCount() > 0)
 {
  foreach ($results as $result) {
     $status=$result->Status;
-    $_SESSION['eid']=$result->id;
+    $role=$result->Role;
+    $_SESSION['uid']=$result->id;
   }
 if($status==0)
 {
 $msg="Your account is Inactive. Please contact admin";
-} else{
+}
+else{
 $_SESSION['emplogin']=$_POST['username'];
 echo "<script type='text/javascript'> document.location = 'emp-changepassword.php'; </script>";
 } }
@@ -31,7 +84,7 @@ else{
 
   echo "<script>alert('Invalid Details');</script>";
 
-}
+}*/
 
 }
 
@@ -160,7 +213,7 @@ else{
 
                                   <div class="card-content ">
                                       <span class="card-title" style="font-size:20px;">Employee Login</span>
-                                         <?php if($msg){?><div class="errorWrap"><strong>Error</strong> : <?php echo htmlentities($msg); ?> </div><?php }?>
+<!--                                         <?php /*if($msg){*/?><div class="errorWrap"><strong>Error</strong> : <?php /*echo htmlentities($msg); */?> </div>--><?php /*}*/?>
                                        <div class="row">
                                            <form class="col s12" name="signin" method="post">
                                                <div class="input-field col s12">

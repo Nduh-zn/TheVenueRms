@@ -13,7 +13,7 @@ else{
         $roomname=$_POST['roomname'];
         $roomtype=$_POST['roomtype'];
         $description=$_POST['description'];
-        $sql="update roomtype set roomType=:roomtype,Description=:description where id=:rid";
+        $sql="update room set RoomName=:roomname, RoomType=:roomtype,Description=:description where id=:rid";
         $query = $dbh->prepare($sql);
         $query->bindParam(':roomname',$roomname,PDO::PARAM_STR);
         $query->bindParam(':roomtype',$roomtype,PDO::PARAM_STR);
@@ -102,7 +102,7 @@ else{
 
 
                                     <div class="input-field col m6 s12">
-                                        <select  name="role" autocomplete="off">
+                                        <select  name="roomtype" autocomplete="off">
                                             <option value="<?php echo htmlentities($result->RoomType);?>"><?php echo htmlentities($result->RoomType);?></option>
                                             <?php $sql = "SELECT RoomType from roomtype";
                                             $query = $dbh -> prepare($sql);
