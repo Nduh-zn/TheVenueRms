@@ -49,10 +49,8 @@
                             </a>
                         </section>
                         <div class="header-title col s3">      
-                           <span class="chapter-title">ELMS | Admin <a href="https://www.noidatut.com"> | Dr. Tutorial NoidaTut</span>
+                            <a href="index.php" <span class="chapter-title">THE VENUE</a></span>
                         </div>
-                     
-                
                     </div>
                 </nav>
             </header>

@@ -28,7 +28,7 @@ html * {
 body {
 	font: {
 		size: 1.6rem;
-		family: $primary-font; // variables inside partials > _variables.scss
+		family: $primary-font; // variables inside includes > _variables.scss
 	}
 	color: $color-1;
 	background-color: $color-1;
@@ -147,7 +147,7 @@ Main Components
 		@include clearfix;
 
 		> li {
-			@include column(1/$pt-number); // see partials > _layout.scss and partials > _variables.scss 
+			@include column(1/$pt-number); // see includes > _layout.scss and includes > _variables.scss
 		}
 
 		.cd-has-margins & > li {

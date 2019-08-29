@@ -8,8 +8,8 @@ if (ini_get("session.use_cookies")) {
         $params["secure"], $params["httponly"]
     );
 }
-unset($_SESSION['alogin']);
+unset($_SESSION['gtlogin']);
 session_destroy(); // destroy session
-header("location:index.php"); 
+header("location:login.php");
 ?>
 

@@ -62,9 +62,9 @@ else{
         </style>
     </head>
     <body>
-    <?php include('includes/header.php');?>
+    <?php include('partials/header.php');?>
 
-    <?php include('includes/sidebar.php');?>
+    <?php include('partials/sidebar.php');?>
     <main class="mn-inner">
         <div class="row">
             <div class="col s12">
@@ -74,7 +74,8 @@ else{
                 <div class="card">
                     <div class="card-content">
                         <span class="card-title">Room Info</span>
-                        <?php if($msg){?><div class="succWrap"><strong>SUCCESS</strong> : <?php echo htmlentities($msg); ?> </div><?php }?>
+                        <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php }
+                        else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
                         <table id="example" class="display responsive-table ">
                             <thead>
                             <tr>

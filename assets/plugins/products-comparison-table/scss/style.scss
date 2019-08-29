@@ -23,7 +23,7 @@ html {
 body {
 	font: {
 		size: 1.6rem;
-		family: $primary-font; // variables inside partials > _variables.scss
+		family: $primary-font; // variables inside includes > _variables.scss
 	}
 	color: $color-1;
 	background-color: $color-3;

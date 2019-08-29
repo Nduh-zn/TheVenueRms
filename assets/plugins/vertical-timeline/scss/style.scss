@@ -24,7 +24,7 @@ html * {
 body {
 	font: {
 		size: 100%;
-		family: $primary-font; // variables inside partials > _variables.scss
+		family: $primary-font; // variables inside includes > _variables.scss
 	}
 	color: $main-text;
 	background-color: $background;
@@ -53,7 +53,7 @@ Modules - reusable parts of our design
 
 .cd-container { /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
 	width: 90%;
-	max-width: $L; // breakpoints inside partials > _layout.scss
+	max-width: $L; // breakpoints inside includes > _layout.scss
 	margin: 0 auto;
 
 	&::after { /* clearfix */

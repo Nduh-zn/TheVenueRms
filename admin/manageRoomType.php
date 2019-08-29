@@ -61,8 +61,8 @@ $msg="Room type successfully deleted";
         </style>
     </head>
     <body>
-       <?php include('includes/header.php');?>
-       <?php include('includes/sidebar.php');?>
+       <?php include('partials/header.php');?>
+       <?php include('partials/sidebar.php');?>
             <main class="mn-inner">
                 <div class="row">
                     <div class="col s12 m12 l12">

@@ -1,43 +1,47 @@
 <?php 
-require_once("includes/config.php");
-// code for uid availablity
-if(!empty($_POST["ucode"])) {
-	$uid=$_POST["ucode"];
-	
-$sql ="SELECT username FROM users WHERE username=:uid";
-$query= $dbh->prepare($sql);
-$query-> bindParam(':uid',$uid, PDO::PARAM_STR);
-$query-> execute();
-$results = $query -> fetchAll(PDO::FETCH_OBJ);
-if($query->rowCount() > 0)
-{
-echo "<span style='color:red'> Employee id already exists .</span>";
- echo "<script>$('#add').prop('disabled',true);</script>";
-} else{
-	
-echo "<span style='color:green'> Employee id available for Registration .</span>";
-echo "<script>$('#add').prop('disabled',false);</script>";
-}
+require_once("../includes/config.php");
+// code for username availability
+if(!empty($_POST["username"])) {
+    $username=$_POST["username"];
+
+    $sql ="SELECT username FROM `users` WHERE username=:username";
+    $query= $dbh->prepare($sql);
+    $query-> bindParam(':username',$username, PDO::PARAM_STR);
+    $query-> execute();
+    $results = $query -> fetchAll(PDO::FETCH_OBJ);
+
+
+    if($query->rowCount() > 0)
+    {
+        echo "<span style='color:red'> Username already in use!</span>";
+        echo "<script>$('#add').prop('disabled',true);</script>";
+    } else{
+
+        echo "<span style='color:green'> Username available.</span>";
+        echo "<script>$('#add').prop('disabled',false);</script>";
+    }
 }
 
-// code for emailid availablity
-if(!empty($_POST["emailid"])) {
-$empid= $_POST["emailid"];
-$sql ="SELECT EmailId FROM tblemployees WHERE EmailId=:emailid";
-$query= $dbh -> prepare($sql);
-$query-> bindParam(':emailid',$empid, PDO::PARAM_STR);
-$query-> execute();
-$results = $query -> fetchAll(PDO::FETCH_OBJ);
-if($query -> rowCount() > 0)
-{
-echo "<span style='color:red'> Email id already exists .</span>";
- echo "<script>$('#add').prop('disabled',true);</script>";
-} else{
-	
-echo "<span style='color:green'> Email id available for Registration .</span>";
-echo "<script>$('#add').prop('disabled',false);</script>";
+// code for email availability
+if(!empty($_POST["email"])) {
+    $email= $_POST["email"];
+
+    $sql ="SELECT EmailId FROM `users` WHERE EmailId=:email";
+    $query= $dbh->prepare($sql);
+    $query-> bindParam(':email',$email, PDO::PARAM_STR);
+    $query-> execute();
+    $results = $query -> fetchAll(PDO::FETCH_OBJ);
+    if($query -> rowCount() > 0)
+    {
+        echo "<span style='color:red'> Email already in use!</span>";
+        echo "<script>$('#add').prop('disabled',true);</script>";
+    } else{
+
+        echo "<span style='color:green'> Email available for Registration.</span>";
+        echo "<script>$('#add').prop('disabled',false);</script>";
+    }
 }
-}
+
 
 
 
